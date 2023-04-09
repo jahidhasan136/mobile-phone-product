@@ -7,7 +7,7 @@ const OrderSummary = ({ cart, handleDeletCart }) => {
             <h3>Order Summary: {cart.length}</h3>
             <div>
                 {
-                    cart.map(p => <p key={p.id}>{p.title} <button onClick={() => handleDeletCart(cart.id)}>x</button></p>)
+                    cart.map(p => <p key={p.id}>{p.title} <button onClick={() => handleDeletCart(p.id)}>x</button></p>)
                 }
             </div>
         </div>
