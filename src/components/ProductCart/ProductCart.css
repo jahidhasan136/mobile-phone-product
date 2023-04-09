@@ -1,0 +1,11 @@
+.product-details{
+    width: 300px;
+    border: 1px solid lightcoral;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.product-details img{
+    width: 300px;
+    border-radius: 10px;
+}

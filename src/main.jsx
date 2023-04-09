@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'product',
-        element: <Product></Product>
+        element: <Product></Product>,
+        loader: () => fetch('product.json')
       },
       {
         path: 'rechart',
