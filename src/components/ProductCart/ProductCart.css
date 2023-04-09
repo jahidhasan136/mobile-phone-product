@@ -9,3 +9,8 @@
     width: 300px;
     border-radius: 10px;
 }
+.product-details button{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}

@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Product.css'
 import { useLoaderData } from 'react-router-dom';
 import ProductCart from '../ProductCart/ProductCart';
+import OrderSummary from '../OrderSummary/OrderSummary';
 
 const Product = () => {
     const product = useLoaderData()
-    const products = product.products
-    console.log(products)
+    const products = product.products;
+
+    const [cart, setCart] = useState([])
+
+    const handleAddToCart = order =>{
+        const addCart = [...cart, order]
+        setCart(addCart)
+    }
+
     return (
         <div className='product-container'>
             <div className='product-cart'>
                 {
-                    products.map(product => <ProductCart key={product.id} product={product}></ProductCart>)
+                    products.map(product => <ProductCart key={product.id} product={product} handleAddToCart={handleAddToCart}></ProductCart>)
                 }
             </div>
             <div>
-                <h4>Order Summary</h4>
+                <OrderSummary cart={cart}></OrderSummary>
             </div>
         </div>
     );
